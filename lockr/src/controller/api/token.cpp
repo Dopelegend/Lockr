@@ -16,7 +16,7 @@ namespace lockr {
             return;
         }
 
-        if(!ValidateRefreshToken(body["refreshToken"])) {
+        if(ValidateRefreshToken(body["refreshToken"])) {
             nlohmann::json j = {
                     {"success", false},
                     {"message", "Refresh token is invalid."}
